@@ -1,0 +1,72 @@
+INSERT INTO Domain (Domain_ID, Domain_Name, Domain_Type, Domain_Description) VALUES
+(1, 'netreach.com', 'Corporate', 'Main corporate email domain'),
+(2, 'hello.netreach.com', 'HelpDesk', 'For HelpDesk'),
+(3, 'dev.netreach.com', 'Development', 'For Development'),
+(4, 'sales.netreach.com', 'Sales', 'For Sales'),
+(5, 'marketing.netreach.com', 'Marketing', 'For marketing.'),
+(6, 'hr.netreach.com', 'HR', 'For HR'),
+(7, 'support.netreach.com', 'Support', 'For Support'),
+(8, 'finance.netreach.com', 'Finance', 'For Finance'),
+(9, 'digital.netreach.com', 'Digital', 'For Digital'),
+(10, 'creative.netreach.com', 'creative', 'For Creative');
+
+
+INSERT INTO Server (Server_ID, Domain_ID, Server_Name, Server_Type, Server_Address, Server_Description) VALUES
+(1, 1, 'Corporate', 'SMTP', '120.110.0.1', 'Corporat server'),
+(2, 2, 'HelpDesk', 'SMTP', '120.110.0.2', 'HelpDesk server'),
+(3, 3, 'Sales', 'SMTP', '120.110.0.3', 'Sales server'),
+(4, 4, 'Marketing', 'SMTP', '120.110.0.4', 'Marketing server'),
+(5, 5, 'HR', 'SMTP', '120.110.0.5', 'HR server'),
+(6, 6, 'Support', 'SMTP', '120.110.0.6', 'Support server'),
+(7, 7, 'Development', 'SMTP', '120.110.0.7', 'Development server'),
+(8, 8, 'Finance', 'SMTP', '120.110.0.8', 'Finance server'),
+(9, 9, 'Digital', 'SMTP', '120.110.0.9', 'Digital server'),
+(10, 10, 'creative', 'SMTP', '120.110.0.10', 'creative server');
+
+INSERT INTO [User] (User_ID, Name, Email, Phone, Gender, DOB) VALUES
+(1, 'Induwara Senanayake', 'induwara.senanayake@mailcom.com', '0776543210', 'Male', '1992-04-12'),
+(2, 'Malithi Karunaratne', 'malithi.karuna@gmail.com', '0718765432', 'Female', '1995-09-10'),
+(3, 'Rasika Wijetunga', 'rasika.wijetunga@yahoo.com', '0759876543', 'Male', '1990-12-01'),
+(4, 'Hansika Ekanayake', 'hansika.eka@abc.lk', '0765432109', 'Female', '1996-03-15'),
+(5, 'Kalindu Rathnayake', 'kalindu.rathna@xyz.com', '0782345678', 'Male', '1993-07-22'),
+(6, 'Sachintha Samarasekara', 'sachintha.sam@edu.lk', '0793456789', 'Female', '1997-11-08'),
+(7, 'Dineth De Silva', 'dineth.desilva@gov.lk', '0724567890', 'Male', '1994-01-20'),
+(8, 'Lasitha Ranasinghe', 'lasitha.rana@slmail.com', '0745678901', 'Male', '1999-08-30'),
+(9, 'Hiruni Gamage', 'hiruni.gamage@example.com', '0736789012', 'Female', '1998-05-25'),
+(10, 'Buddhi Jayasinghe', 'buddhi.jayasinghe@custom.lk', '0757890123', 'Male', '1997-02-18');
+
+INSERT INTO Mailbox (Mailbox_ID, User_ID, Name, Type, Description, Server_ID) VALUES
+(1, 1, 'Induwara Senanayake Mailbox', 'Corporate', 'Corporate email inbox for netreach.com', 1),
+(2, 2, 'Malithi Karunaratne Mailbox', 'HelpDesk', 'HelpDesk inbox for hello.netreach.com', 2),
+(3, 3, 'Rasika Wijetunga Mailbox', 'Development', 'Development inbox for dev.netreach.com', 3),
+(4, 4, 'Hansika Ekanayake Mailbox', 'Sales', 'Sales inbox for sales.netreach.com', 4),
+(5, 5, 'Kalindu Rathnayake Mailbox', 'Marketing', 'Marketing inbox for marketing.netreach.com', 5),
+(6, 6, 'Sachintha Samarasekara Mailbox', 'HR', 'HR inbox for hr.netreach.com', 6),
+(7, 7, 'Dineth De Silva Mailbox', 'Support', 'Support inbox for support.netreach.com', 7),
+(8, 8, 'Lasitha Ranasinghe Mailbox', 'Finance', 'Finance inbox for finance.netreach.com', 8),
+(9, 9, 'Hiruni Gamage Mailbox', 'Digital', 'Digital inbox for digital.netreach.com', 9),
+(10, 10, 'Buddhi Jayasinghe Mailbox', 'Creative', 'Creative inbox for creative.netreach.com', 10);
+
+INSERT INTO Email (Email_ID, Subject, Message, Sender_ID, Domain_ID) VALUES
+(1, 'Project Kickoff', 'Initial discussion for the upcoming corporate project', 1, 1),
+(2, 'Helpdesk Issue', 'Please resolve the issue with the login credentials', 2, 2),
+(3, 'Code Deployment Update', 'Update regarding new software deployments', 3, 3),
+(4, 'Sales Campaign', 'Proposal for the new sales campaign', 4, 4),
+(5, 'Marketing Strategy', 'Marketing strategy plan for the upcoming year', 5, 5),
+(6, 'HR Policy Update', 'New updates regarding HR policies', 6, 6),
+(7, 'Technical Support Request', 'Request for technical assistance for system issues', 7, 7),
+(8, 'Finance Report', 'Financial report for the current quarter', 8, 8),
+(9, 'Digital Marketing Trends', 'Update on the latest digital marketing trends', 9, 9),
+(10, 'Creative Brief', 'Creative brief for the upcoming campaign', 10, 10);
+
+INSERT INTO Email_Receiver (Email_ID, Receiver_ID) VALUES
+(1, 2), -- Induwara's email sent to Malithi
+(2, 1), -- Malithi's email sent to Induwara
+(3, 4), -- Rasika's email sent to Hansika
+(4, 5), -- Hansika's email sent to Kalindu
+(5, 3), -- Kalindu's email sent to Rasika
+(6, 2), -- Sachintha's email sent to Malithi
+(7, 5), -- Dineth's email sent to Kalindu
+(8, 1), -- Lasitha's email sent to Induwara
+(9, 6), -- Hiruni's email sent to Sachintha
+(10, 4); -- Buddhi's email sent to Hansika
